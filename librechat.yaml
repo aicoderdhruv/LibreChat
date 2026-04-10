@@ -1,0 +1,37 @@
+version: 1.3.5
+cache: true
+
+balance:
+  enabled: true
+  startBalance: 100000
+  autoRefillEnabled: false
+
+registration:
+  allowedDomains:
+    - "esecconsultants.com"
+
+interface:
+  customWelcome: "Welcome to eSec AI, {{user.name}}!"
+  modelSelect: false
+  parameters: false
+  presets: false
+
+modelSpecs:
+  enforce: true
+  list:
+    - name: "claude-haiku"
+      label: "Haiku (Fast)"
+      description: "Quick answers, summaries, simple tasks"
+      iconURL: "anthropic"
+      preset:
+        endpoint: "anthropic"
+        model: "claude-haiku-4-5-20251001"
+
+    - name: "claude-sonnet"
+      label: "Sonnet (Balanced)"
+      description: "Everyday work - emails, drafts, analysis"
+      default: true
+      iconURL: "anthropic"
+      preset:
+        endpoint: "anthropic"
+        model: "claude-sonnet-4-6-20250217"
